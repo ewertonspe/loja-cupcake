@@ -1,0 +1,8 @@
+.PainelProdutos-Container {
+    height: 200px;
+    /* border: 1px solid #F2958D; */
+    background: rgb(242,228,201);
+    /* background: radial-gradient(circle, rgba(242,228,201,1) 0%, rgba(242,149,141,1) 100%); */
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.16);
+}

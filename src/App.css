@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App {    
+  background-color: #fcd2ce;
+  width: 100vw;
   min-height: 100vh;
+}
+
+.ContainerHeader{
+  width: 100%;
+  width: 100%;
+  height: 50px;
+  background-color: #F2958D;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ContainerContent {
+  display: flex;
+  width: 100vw;
+  /* padding: 16px; */
+  gap: 16px;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.ContainerHome {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  flex-direction: column;
+  min-height: calc(100vh - 50px);
+}
+
+.ContainerMenu {
   display: flex;
   flex-direction: column;
+  width: min-content;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 16px;
+  gap: 8px;
+  background-color: #F2E4C9;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.ContainerMenu:hover {
+background-color: rgb(242, 149, 140, 0.80);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  text-decoration: none;
+}
+
+.logotitulo {
+  margin-top: 16px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imgLogo {
+  width: 200px;
+  height: 180;
+}
+
+.containertitulo {
+  width: auto;
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+    background-color: #F2958D;
+    border-radius: 8px 8px 0px 0px;
+    height: 50px;
+}
+
+h4 {
+  color: #FFF;
+  font-size: 18px;
+}
+
+
+
+.ContainerMenuBar {
+  position: absolute;
+  height: calc(100vh - 50px);
+  background-color: #F2958D;
+  transition: width 0.5s ease-in-out;
+}
+
+.MenuList {
+  padding-inline-start: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.MenuItem {
+  display: flex;
+  justify-content: flex-start;
+  gap: 26px;
+  color: #FFF;
+  fill: #FFF;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: center;
+  text-decoration: none;
 }
