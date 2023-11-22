@@ -5,7 +5,6 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState(new Date());
-  const [user, setUser] = useState('Visita');
   const [login, setLogin] = useState(false);
   const [MenuOpen, setMenuOpen] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -30,8 +29,6 @@ const AppProvider = ({ children }) => {
             setStartDate, 
             endDate,
             setEndDate,
-            user, 
-            setUser,
             login,
             setLogin,
             MenuOpen,

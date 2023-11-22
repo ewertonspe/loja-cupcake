@@ -2,6 +2,7 @@ import '../../App.css';
 import './Produtos.css';
 import logo from '../../assets/logo_01.png'
 import { useState, useEffect } from 'react';
+import { useAuthValue } from "../../context/AuthContext";
 
 //Icones 
 import {ReactComponent as ProdutosIcon} from '../../assets/icons/dashboard_FILL0_wght400_GRAD0_opsz48.svg';
@@ -15,6 +16,9 @@ import { toast } from 'react-toastify';
 const Produtos = () => {
     const [carrinho, setCarrinho] = useState({})
     const [valor, setValor] = useState(0)
+    const { user } = useAuthValue();
+
+    console.log(user)
     const itens = [{
         id: 0,
         nome: 'Cupcake Chocolate',
@@ -29,7 +33,7 @@ const Produtos = () => {
         },{
             id: 2,
             nome: 'Cupcake Morango',
-            valor: 5.0,            
+            valor: 3.0,            
             url: 'https://raw.githubusercontent.com/ewertonspe/loja-cupcake/main/src/assets/produtos/03.png'
         }]
     
@@ -60,12 +64,9 @@ const Produtos = () => {
             Cookies.set('carrinho',JSON.stringify(saida), {expires: 1})
         }
 
-        // saida = {}
         for (prop in carrinho) {
             carrinho[prop].quantidade = 0 
         }
-        // setCarrinho(saida)
-        console.log(carrinho)
         
         setValor(valor + 1)
         toast.success("Produtos adicionados")
@@ -95,7 +96,7 @@ const Produtos = () => {
                 <img src={logo} alt="Logo" className='imgLogo'/>
             </div>
             <div>
-                <p>Bom dia, Ewerton É um prazer ter você de volta</p>
+                <p>Bom dia, {!user ? 'visitante' : user.displayName} É um prazer ter você de volta</p>
             </div>
         </div>
         <div style={{width:'100vw'}}>
