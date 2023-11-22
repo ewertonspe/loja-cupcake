@@ -32,9 +32,9 @@ const MenuBar = () => {
         url: '/'
     },
     {
-        nome:"Carinho",
+        nome:"Carrinho",
         icone:<CarinhoIcon className='IconMenu'/>,
-        url: '/carinho'
+        url: '/carrinho'
     },
     {
         nome:"Pedidos",
@@ -56,7 +56,7 @@ const MenuBar = () => {
     <div className='ContainerMenuBar' style={{width: MenuOpen ? '0px' : '240px'}}>
       {(!MenuOpen && !menuContent) && <div>
       <ul className='MenuList'>
-        {itens.map((item) => <NavLink to={item.url} className='MenuItem' onClick={handleClickMenu}>
+        {itens.map((item) => <NavLink key={item.nome} to={item.url} className='MenuItem' onClick={handleClickMenu}>
           {item.icone}
           <p style={{color:'#FFF', margin:'0px'}}>{item.nome}</p>          
         </NavLink>)}
