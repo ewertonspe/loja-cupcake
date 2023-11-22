@@ -33,7 +33,7 @@ const Header = () => {
         <Menu className='IconMenu' onClick={handleClick}/>
       </div>
       <div style={{padding:'8px'}}>
-      {!user ? <User className='IconMenu' onClick={GoToLogin}/> : <LogoutIcon className='IconMenu' onClick={logout}/>}
+      {!user ? <User className='IconMenu_User' onClick={GoToLogin}/> : <LogoutIcon className='IconMenu_User' onClick={logout}/>}
       </div>
     </div>
   )
