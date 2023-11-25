@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useAuthentication } from "../../hooks/useAuthentication";
+import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
   
+  const navigate = useNavigate();
   const [name, setName] = useState('')
+  const [lastname, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confpassword, setConfPassword] = useState('')
@@ -20,12 +23,14 @@ const Cadastro = () => {
     }
     const user = {
       displayName : name,
+      lastname,
       email,
       password,
     };
     
     const res = await createUser(user);
 
+    navigate('/');
     console.log(res);
   }
 
@@ -47,8 +52,12 @@ const Cadastro = () => {
         <h1>criar seu cadastro</h1>
         <form className='LoginForm'>
             <label className='LoginLabel'>
-                nome completo
+                primeiro nome
                 <input type="text" required value={name} onChange={(e) => setName(e.target.value)} />
+            </label>
+            <label className='LoginLabel'>
+                último nome 
+                <input type="text" required value={lastname} onChange={(e) => setLastName(e.target.value)} />
             </label>
             <label className='LoginLabel'>
                 email

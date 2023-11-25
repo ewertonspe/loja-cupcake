@@ -1,6 +1,10 @@
 import Cookies from 'js-cookie';
 import React from 'react'
+import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useAuthValue } from "../../context/AuthContext";
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import '../../App.css';
 import './Carrinho.css';
 import logo from '../../assets/logo_01.png'
@@ -11,12 +15,25 @@ import {ReactComponent as RemoveIcon} from '../../assets/icons/remove_FILL0_wght
 const Carrinho = () => {
     const [carrinho, setCarrinho] = useState([])    
     const [valor, setValor] = useState(0)
+    const { user } = useAuthValue();
+    const { insertDocument, response , loading } = useInsertDocument("pedidos");
+    const navigate = useNavigate();
 
     useEffect(() => {
+        setCarrinho([])
         Cookies.get('carrinho') && setCarrinho(JSON.parse(Cookies.get('carrinho')))
     }, [])
-    
-    
+
+    useEffect(() => {
+        if(loading && !response){
+            toast.success("Pedido realizado")
+            Cookies.set('carrinho',JSON.stringify({}), {expires: 1})
+            setCarrinho([])
+            setValor(valor + 1)
+            navigate('/pedidos')
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [loading, response])
 
     const handleAdd = (e) => {
         if(e.target.nodeName === 'svg'){
@@ -54,7 +71,28 @@ const Carrinho = () => {
 
         }
     }
-    // console.log()
+
+    const FazerPedido = () => {
+        (user === null) && navigate('/login')
+        let pedido = {
+            
+            uid: user.uid,
+            createdBy: user.displayName,
+            total : Object.values(carrinho).reduce((acc, objeto) => { 
+                return acc + (objeto.valor * objeto.quantidade)
+                }, 0),
+            itens : Object.values(carrinho).map(function(item) { 
+                delete item.id; 
+                delete item.url; 
+                delete item.valor; 
+                return item; 
+            }),
+            status : 'Pagamento Pendente'
+
+        }
+        insertDocument(pedido);
+    }
+
   return (
     <div className='ContainerHome'>
         <div className='logotitulo'>
@@ -65,7 +103,7 @@ const Carrinho = () => {
                 <p>Aqui você consegue acompanhar os seu pedidos</p>
             </div>
         </div>
-        <div style={{width:'100vw'}}>
+        <div className='ContainerCarrinhoContent'>
             <div className='containertitulo'>
                 <CarrinhoIcon style={{width:'40px', height:'40px', fill: '#FFF'}}/>
                 <h4>Carrinho</h4>
@@ -96,6 +134,12 @@ const Carrinho = () => {
                 }, 0).toFixed(2).replace('.',',')}
                 </p>
             </div>}
+            
+            {Object.values(carrinho).length > 0 &&  
+            <div className='ContainerCarrinhoTotal'>
+                <button className='Botao' onClick={FazerPedido}>Finalizar Pedido</button>
+            </div>}
+            {Object.values(carrinho).length === 0 && <h2 className='CarrinhoVazio'>Seu carrinho de compras está vazio.</h2>}
         </div>
     </div>
   )

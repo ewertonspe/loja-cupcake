@@ -18,7 +18,9 @@ const Produtos = () => {
     const [valor, setValor] = useState(0)
     const { user } = useAuthValue();
 
-    console.log(user)
+    let turno = (new Date()).getHours() >= 18 ? 'Boa noite' : 'Bom dia'
+
+    // console.log(time.getHours())
     const itens = [{
         id: 0,
         nome: 'Cupcake Chocolate',
@@ -96,7 +98,8 @@ const Produtos = () => {
                 <img src={logo} alt="Logo" className='imgLogo'/>
             </div>
             <div>
-                <p>Bom dia, {!user ? 'visitante' : user.displayName} É um prazer ter você de volta</p>
+                <p style={{marginBlock: '0px'}}>{turno}, {!user ? 'visitante' : user.displayName} </p>
+                <p style={{marginBlock: '8px'}}>É um prazer ter você de volta</p>
             </div>
         </div>
         <div style={{width:'100vw'}}>

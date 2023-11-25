@@ -1,19 +1,23 @@
+//css
 import './App.css';
-import {BrowserRouter, Routes, Route } from "react-router-dom"
 import "react-toastify/dist/ReactToastify.css";
+
+//imports
 import { onAuthStateChanged } from "firebase/auth";
-import { useAuthentication } from "./hooks/useAuthentication";
 import { useState, useEffect } from 'react';
+import {BrowserRouter, Routes, Route } from "react-router-dom"
+import { ToastContainer } from 'react-toastify';
 
 //Componentes 
 import Header from './components/Header/Header'
-// import Home from './pages/Home/Home'
 import MenuBar from './components/MenuBar/MenuBar';
 import Pedidos from './pages/Pedidos/Pedidos';
 import Produtos from './pages/Produtos/Produtos';
 import Carrinho from './pages/Carrinho/Carrinho';
 import Cadastro from './pages/Cadastro/Cadastro';
-import { ToastContainer } from 'react-toastify';
+
+//hooks
+import { useAuthentication } from "./hooks/useAuthentication";
 import { Login } from './pages/Login/Login';
 
 // context
@@ -23,7 +27,6 @@ import { AuthProvider } from "./context/AuthContext";
 function App() {
   const [user, setUser] = useState(undefined);
   const { auth } = useAuthentication();
-
   const loadingUser = user === undefined;
 
   useEffect(() => {
@@ -59,7 +62,7 @@ function App() {
         <MenuBar/>
           <Routes>
             <Route path='/' element={<Produtos/>}/>
-            <Route path='/pedidos' element={<Pedidos/>}/>
+            <Route path='/pedidos' element={user ? <Pedidos/> : <Produtos/>}/>
             <Route path='/carrinho' element={<Carrinho/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/cadastro' element={<Cadastro/>}/>

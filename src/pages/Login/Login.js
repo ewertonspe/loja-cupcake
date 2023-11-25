@@ -1,15 +1,20 @@
+//css
 import './Login.css'
+
+//imports
 import { toast } from 'react-toastify';
 import { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
-import { useAuthentication } from "../../hooks/useAuthentication";
 import { useNavigate } from "react-router-dom";
+
+//hooks
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error , setError] = useState(null);
-    const { login, error: authError } = useAuthentication();
+    const { login, error: authError, loading } = useAuthentication();
     const navigate = useNavigate();
 
     const loginuser = async (e) => {
@@ -19,24 +24,37 @@ export const Login = () => {
           email,
           password,
         };
-    
+
         const res = await login(user);
-        navigate('/')
-        console.log(res);
+        // navigate('/');
+        console.log(res);        
     }
 
-    useEffect(() => {
-        if (authError) {
-          setError(authError);
-        }
-      }, [authError]);
 
-      useEffect(() => {
-        if (error) {
-          toast.error(error);
-          setError(null)
+    // let teste = toast
+    // teste.onChange((e) => console.log(e))
+    // console.log(toast.error('oi'),{
+    //   toastId: 99
+    // })
+
+    useEffect(() => {
+      // !loading && console.log(authError, loading)
+      }, [loading]);
+
+    useEffect(() => {
+      console.log(authError, loading)
+        if (authError && loading === false) {
+          toast.error(authError);
         }
-      }, [error]);
+        else if (authError === false && loading === false) {
+          toast.success('Login com sucesso',{toastId: 99});
+          toast.onChange((e) => (
+            e.status === 'removed' && 
+            e.type === 'success' && 
+            e.id === 99
+            ) && navigate('/'))
+        }       
+      }, [loading]);
 
   return (
     

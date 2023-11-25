@@ -1,4 +1,9 @@
-import React from 'react'
+import {useEffect} from 'react'
+import { useAuthValue } from "../../context/AuthContext";
+
+// hooks
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+
 import '../../App.css';
 import './Pedidos.css';
 
@@ -7,6 +12,18 @@ import {ReactComponent as PedidosIcon} from '../../assets/icons/shopping_bag_FIL
 import cupcake01 from '../../assets/produtos/01.png'
 
 const Pedidos = () => {
+    const { user } = useAuthValue();
+    let uid = ''
+    if(user){
+        uid = user.uid;
+    }
+    const { documents } = useFetchDocuments("pedidos",null ,uid);
+
+    // useEffect(() => {
+        console.log(documents)
+    // }, [document])
+    
+    
   return (
     
     <div className='ContainerHome'>
