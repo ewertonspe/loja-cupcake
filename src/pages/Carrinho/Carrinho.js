@@ -1,6 +1,5 @@
 import Cookies from 'js-cookie';
 import React from 'react'
-import { useInsertDocument } from "../../hooks/useInsertDocument";
 import { useAuthValue } from "../../context/AuthContext";
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -12,12 +11,22 @@ import {ReactComponent as CarrinhoIcon} from '../../assets/icons/shopping_cart_F
 import {ReactComponent as AddIcon} from '../../assets/icons/add_FILL0_wght400_GRAD0_opsz48.svg';
 import {ReactComponent as RemoveIcon} from '../../assets/icons/remove_FILL0_wght400_GRAD0_opsz24.svg';
 
+// hooks
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
+
 const Carrinho = () => {
     const [carrinho, setCarrinho] = useState([])    
     const [valor, setValor] = useState(0)
     const { user } = useAuthValue();
     const { insertDocument, response , loading } = useInsertDocument("pedidos");
     const navigate = useNavigate();
+    const { documents : pedidos } = useFetchDocuments("pedidos");
+    let id_pedido = 0
+
+    if(pedidos){
+        id_pedido = pedidos.length
+    }
 
     useEffect(() => {
         setCarrinho([])
@@ -75,7 +84,7 @@ const Carrinho = () => {
     const FazerPedido = () => {
         (user === null) && navigate('/login')
         let pedido = {
-            
+            id_pedido,
             uid: user.uid,
             createdBy: user.displayName,
             total : Object.values(carrinho).reduce((acc, objeto) => { 

@@ -13,7 +13,7 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error , setError] = useState(null);
+    // const [error , setError] = useState(null);
     const { login, error: authError, loading } = useAuthentication();
     const navigate = useNavigate();
 
@@ -54,6 +54,7 @@ export const Login = () => {
             e.id === 99
             ) && navigate('/'))
         }       
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [loading]);
 
   return (
