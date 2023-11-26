@@ -42,7 +42,6 @@ export const Login = () => {
       }, [loading]);
 
     useEffect(() => {
-      console.log(authError, loading)
         if (authError && loading === false) {
           toast.error(authError);
         }

@@ -102,7 +102,7 @@ const Produtos = () => {
                 <p style={{marginBlock: '8px'}}>É um prazer ter você de volta</p>
             </div>
         </div>
-        <div style={{width:'100vw'}}>
+        <div style={{width:'100vw', maxWidth:'768px'}}>
             <div className='containertitulo'>
                 <ProdutosIcon style={{width:'40px', height:'40px', fill: '#FFF'}}/>
                 <h4>Produtos</h4>

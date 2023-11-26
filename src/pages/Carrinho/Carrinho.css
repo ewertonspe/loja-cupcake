@@ -17,6 +17,8 @@
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
+  
+    max-width: 768px;
 }
 
 .Botao {
@@ -43,4 +45,6 @@
     width: 100vw;
     flex-direction: column;
     gap: 8px;
+  
+    max-width: 768px;
 }

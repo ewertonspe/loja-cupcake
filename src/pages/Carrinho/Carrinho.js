@@ -82,24 +82,30 @@ const Carrinho = () => {
     }
 
     const FazerPedido = () => {
-        (user === null) && navigate('/login')
-        let pedido = {
-            id_pedido,
-            uid: user.uid,
-            createdBy: user.displayName,
-            total : Object.values(carrinho).reduce((acc, objeto) => { 
-                return acc + (objeto.valor * objeto.quantidade)
-                }, 0),
-            itens : Object.values(carrinho).map(function(item) { 
-                delete item.id; 
-                delete item.url; 
-                delete item.valor; 
-                return item; 
-            }),
-            status : 'Pagamento Pendente'
+        // console.log('oi',user)
+        if(user === null){
+            navigate('/login')
+        }
+        else {
+            let pedido = {
+                id_pedido,
+                uid: user.uid,
+                createdBy: user.displayName,
+                total : Object.values(carrinho).reduce((acc, objeto) => { 
+                    return acc + (objeto.valor * objeto.quantidade)
+                    }, 0),
+                itens : Object.values(carrinho).map(function(item) { 
+                    delete item.id; 
+                    delete item.url; 
+                    delete item.valor; 
+                    return item; 
+                }),
+                status : 'Pagamento Pendente'
+    
+            }
+            insertDocument(pedido);
 
         }
-        insertDocument(pedido);
     }
 
   return (

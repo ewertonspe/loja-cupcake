@@ -81,7 +81,7 @@ import {
         await signInWithEmailAndPassword(auth, data.email, data.password);
         setError(false);
       } catch (error) {
-        // console.log(error.message);
+        console.log(String(error.message) + 'oi');
         // console.log(typeof error.message);
         // console.log(error.message.includes("user-not"));
   
@@ -91,6 +91,10 @@ import {
           systemErrorMessage = "Usuário não encontrado.";
         } else if (error.message.includes("wrong-password")) {
           systemErrorMessage = "Senha incorreta.";
+        } else if (error.message.includes("auth/invalid-login-credentials")) {
+          systemErrorMessage = "Úsuario ou senha inválido.";
+        } else if (error.message.includes("Access to this account has been temporarily")) {
+          systemErrorMessage = "Úsuario bloqueado.";
         } else {
           systemErrorMessage = "Ocorreu um erro, por favor tenta mais tarde.";
         }

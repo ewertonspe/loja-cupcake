@@ -36,7 +36,7 @@ const Pedidos = () => {
                 <p>Aqui você consegue acompanhar os seu pedidos</p>
             </div>
         </div>
-        <div style={{width:'100vw'}}>
+        <div style={{width:'100vw', maxWidth:'768px'}}>
             <div className='containertitulo'>
                 <PedidosIcon style={{width:'40px', height:'40px', fill: '#FFF'}}/>
                 <h4>Pedidos</h4>

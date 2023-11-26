@@ -2,6 +2,8 @@
   background-color: #fcd2ce;
   width: 100vw;
   min-height: 100vh;
+
+  max-width: 768px;
 }
 
 .ContainerHeader{
@@ -23,6 +25,8 @@
   justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
+
+  max-width: 768px;
 }
 
 .ContainerHome {
@@ -34,6 +38,8 @@
   gap: 16px;
   flex-direction: column;
   min-height: calc(100vh - 50px);
+  
+  max-width: 768px;
 }
 
 .ContainerMenu {
@@ -74,6 +80,8 @@ h3 {
   align-items: center;
   justify-content: flex-start;
   font-size: 22px;
+  
+  max-width: 768px;
 }
 
 .imgLogo {
