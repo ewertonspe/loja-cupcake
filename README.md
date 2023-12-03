@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Projeto Integrador Transdisciplinar em Engenharia de Software II
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O Projeto Integrador Transdisciplinar em Engenharia de Software II é uma disciplina desafiadora em sua essência. Mas não pelo aspecto da dificuldade em ser realizada, pelo contrário! Trata-se de um momento ao qual você, aluno(a), poderá finalmente encontrar um mundo de possibilidades para realizar um projeto sob o aspecto prático e em convergência com tudo o que aprendeu durante sua jornada pelo curso.
 
-## Available Scripts
+É uma oportunidade de pôr a “mão na massa” e enfrentar os desafios profissionais, na forma de um projeto de execução prática, para produzir um produto de software que faça jus a  sua jornada, estudante. Assim, o Projeto apresenta possibilidades de incorporar inovação e criatividade, associadas às novas descobertas, o  que pode levá-lo(a) a uma atividade empreendedora na área de tecnologia, como provedor(a) de soluções e resoluções de problemas.
 
-In the project directory, you can run:
+É claro que o foco aqui é o desenvolvimento do indivíduo como ser humano e como profissional, mas, por diversas vezes, tivemos descobertas profissionais muito marcantes na vida dos(as) alunos(as), por meio da de disciplinas  cuja aprendizagem se realiza mediante a execução de projetos.
 
-### `npm start`
+Para o Projeto Integrador Transdisciplinar em Engenharia de Software II – portanto, segunda parte –, entendemos que, para um melhor proveito, seja orientada a construção do sistema de informação; este, já planejado na disciplina anterior, o Projeto Integrador Transdisciplinar em Engenharia de Software I.    
+Claro que não poderia faltar o desenvolvimento de habilidades desejadas ao mercado de trabalho e ao seu crescimento, futuro(a)  profissional em Engenharia de Software, tão necessárias ao mercado de soluções em tecnologia, como:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Colaboração;
+Resiliência;    
+Pensamento crítico;
+Organização;
+Resolução de problemas;
+Criatividade.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Essas e outras habilidades psicossociais são muito desejadas na atualidade para que se tenha um profissional total na área de Engenharia de Software: ou seja, alguém apto a trabalhar em grupos e equipes, tanto locais como remotos, de maneira síncrona ou assíncrona, e que seja focado em entrega de valor e geração de resultados, integrando seu emocional/social com o conhecimento técnico.
 
-### `npm test`
+Assim, na parte de execução e aplicação da técnica, pretendemos que você, estudante:    
+Revise e melhore o planejamento executado no Projeto Integrador Transdisciplinar em Engenharia de Software I;    
+Saiba configurar e utilizar o ambiente no qual a sua aplicação será executada;    
+Determine as linguagens de programação front-end e back-end que serão utilizadas;    
+Execute testes e laude a solução gerada a partir de compartilhamento de conteúdo para ser avaliado por pares;    
+Utilize padrões para o melhor desenvolvimento do sistema projetado;    
+Escolha as melhores sugestões dos pares para promover melhorias no projeto;    
+Saiba apresentar e defender sua solução com suporte de vídeo;    
+Escreva documentação necessária e coerente com as exigências ágeis.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O Projeto Integrador Transdisciplinar em Engenharia de Software II é o desfecho desse esforço e uma recompensa à aplicação do conhecimento. Além disso, é, por si só, um motivador para que você, estudante, possa mostrar suas soluções e capacidades.
+É o seu momento. A “hora do show”. Do seu show! Aproveite-o, curta essa sua jornada.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Seu futuro profissional já começou!
+## Sucesso!
